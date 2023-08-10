@@ -2,7 +2,6 @@
 
 /**
  * main - this is the main function
- *
  * Return: always 0
  */
 
