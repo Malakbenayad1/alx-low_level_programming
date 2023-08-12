@@ -2,10 +2,8 @@
 #include <time.h>
 #include <stdlib.h>
 /**
- * main - Prints the last digit of a randomly generated numbre
- * and whether it is greater than 5, less than 6, or 0.
- *
- * Return: always 0.
+ * main - Entry point
+ * Return: Always return 0 (success)
  */
 int main(void)
 {
