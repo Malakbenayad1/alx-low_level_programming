@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - Entry point
- * Description: 'print'
+ * 
  * Return: always 0
  */
 int maim(void)
