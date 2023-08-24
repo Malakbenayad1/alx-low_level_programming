@@ -1,10 +1,11 @@
 #include "main.h"
-#include "stdio.h"
+
 /**
- * print_number - function that prints an integer
- * @n: integer params
- * Return: 0
- */
+  * print_number - print numbers chars
+  * @n: integer params
+  * Return: 0
+ **/
+
 void print_number(int n)
 {
 	unsigned int n1;
