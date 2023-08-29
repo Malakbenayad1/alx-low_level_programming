@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _memset - function that fills memory with a constant byte
+ * _memset - fills memory with a constant byte.
  * @n: function fills the first
  * @s: bytes of the memory area pointed
  * @b: the constant byte
@@ -12,7 +12,7 @@ char *_memset(char *s, char b, unsigned int n)
 
 	while (i < n)
 	{
-		* (S + i) = b;
+		*(S + i) = b;
 		i++;
 	}
 	return (s);
