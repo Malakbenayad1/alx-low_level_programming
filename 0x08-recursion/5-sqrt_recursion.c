@@ -5,7 +5,7 @@
  * @b: number that iterates from 1 to n
  * Return: on success 1
  */
-int _sqrt_recursion(int n)
+int _sqrt_recursion(int n, int b)
 {
 	if (b * b == a)
 		return (b);
