@@ -9,7 +9,7 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char strnew = NULL;
+	char *strnew = NULL;
 	unsigned int j;
 	int m1;
 	int m2;
@@ -24,7 +24,7 @@ char *str_concat(char *s1, char *s2)
 		;
 	for (m2 = 0; s2[m2] != '\0'; m2++)
 		;
-	stenew = (char *)malloc((m1 + m2 + 1) * sizeof(char));
+	strnew = (char *)malloc((m1 + m2 + 1) * sizeof(char));
 	if (strnew == NULL)
 	{
 		return (NULL);
