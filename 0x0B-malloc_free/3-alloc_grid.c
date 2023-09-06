@@ -1,10 +1,11 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
- * alloc_grid - function that returns a pointer to a 2
- * @width: rows of matrix
- * @height: columns of string
+ * alloc_grid - Entry point
+ *@width: rows of matrix
+ *@height: columns of string
  * Return: a pointer to a 2 dimensional array of integers or null
  */
 int **alloc_grid(int width, int height)
@@ -12,7 +13,7 @@ int **alloc_grid(int width, int height)
 	int **matrix;
 	int i;
 	int j;
-	int t;
+	int l;
 	int *p;
 
 	if (width <= 0 || height <= 0)
@@ -22,7 +23,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		*(matrix + 1) = (int *)malloc(width * sizeof(int));
+		*(matrix + i) = (int *)malloc(width * sizeof(int));
 		if (*(matrix + i) == NULL)
 		{
 			for (i = 0; i < height; i++)
@@ -34,11 +35,11 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		}
 	}
-	for (t = 0; t < height; t++)
+	for (l = 0; l < height; l++)
 	{
 		for (j = 0; j < width; j++)
 		{
-			matrix[t][j] = 0;
+			matrix[l][j] = 0;
 		}
 	}
 	return (matrix);
