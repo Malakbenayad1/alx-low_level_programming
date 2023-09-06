@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib>
+#include <stdlib.h>
 /**
  * free_grid -  function that frees
  * @grid: rows of matrix
@@ -18,4 +18,4 @@ void free_grid(int **grid, int height)
 		free(p);
 	}
 	free(grid);
-}
+
