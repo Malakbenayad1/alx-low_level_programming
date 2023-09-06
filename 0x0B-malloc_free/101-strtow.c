@@ -9,11 +9,11 @@
  */
 char **strtow(char *str)
 {
-	int i, s, j, k, count, m, wordf;
+	int i, w, j, k, count, m, wordf;
 	char **p;
 	char *x;
 
-	s = 0;
+	w = 0;
 	j = 0;
 	i = 0;
 	count = 0;
@@ -22,12 +22,12 @@ char **strtow(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ' && (str[i + 1] != ' ' || str[i + 1] == '\0'))
-			s++;
+			w++;
 	}
-	p = (char **)malloc((s + 1) * sizeof(char *));
+	p = (char **)malloc((w + 1) * sizeof(char *));
 	if (p == NULL)
 		return (NULL);
-	for (wordf = 0; str[wordf] && j <= s; wordf++)
+	for (wordf = 0; str[wordf] && j <= w; wordf++)
 	{
 		count = 0;
 		if (str[wordf] != ' ')
