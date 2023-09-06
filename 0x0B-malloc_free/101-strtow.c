@@ -1,15 +1,16 @@
 #include "main.h"
 #include <stdio.h>
-#include <std;ib.h>
+#include <stdlib.h>
+
 /**
- * strtow -  function that splits a string into words
- * @str: string
- * @av: arguments
+ * strtow - concatenates all the arguments of your program
+ *@str: string
+ *@av: arguments
  * Return: a pointer to a new string
  */
 char **strtow(char *str)
 {
-	int i, w, j, k, count, m, wordf;
+	int i, w, j, s, count, m, wordf;
 	char **p;
 	char *x;
 
@@ -41,9 +42,9 @@ char **strtow(char *str)
 			*(p + j) = (char *)malloc((count + 1) * sizeof(char));
 			if (*(p + j) == NULL)
 			{
-				for (k = 0; k <= j; k++)
+				for (s = 0; s <= j; s++)
 				{
-					x = p[k];
+					x = p[s];
 					free(x);
 				}
 				free(p);
