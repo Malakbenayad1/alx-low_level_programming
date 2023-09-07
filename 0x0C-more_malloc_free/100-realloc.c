@@ -14,7 +14,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *d;
 	unsigned int i, max = new_size;
-	char *s = ptr;
+	char *oldp = ptr;
 
 	if (ptr == NULL)
 	{
@@ -29,7 +29,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size > old_size)
 		max = old_size;
 	for (i = 0; i < max; i++)
-		d[i] = s[i];
+		d[i] = oldp[i];
 	free(ptr);
 	return (d);
 }
