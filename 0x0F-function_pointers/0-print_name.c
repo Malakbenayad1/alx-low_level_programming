@@ -3,7 +3,7 @@
 /**
  * print_name - function that prints a name
  * @name: input
- * @s: input
+ * @f: input
  * Return: 0
  */
 
