@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * git_bit - returns the value of a bit at a given index
+ * get_bit - returns the value of a bit at a given index
  * index: index to return
  * @n: unsigned long int to search
  * Return: the value of the bit at index or -1 if error
