@@ -1,47 +1,41 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * read_textfile - reads a text file and prints it.
+ * read_textfile - Reads a text file and prints it to POSIX stdout.
+ * @filename: A pointer to the name of the file.
+ * @letters: The number of letters the
+ *           function should read and print.
  *
- * @filename: const char type pointer to file to be read
- *
- * @letters: size_t type
- *
- * Return: 0
+ * Return: If the function fails or filename is NULL - 0.
+ *         O/w - the actual number of bytes the function can read and print.
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fp;
-	ssize_t fpRead, fpWrite, fpClose;
-	char *lineBuffer;
+	 ssize_t o, r, w;
+	char *buffer;
 
 	if (filename == NULL)
 		return (0);
 
-	lineBuffer = malloc(sizeof(char) * letters);
-
-	if (lineBuffer == NULL)
-		return (-1);
-
-	fp = open(filename, O_RDONLY);
-
-	if (fp == -1)
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer ==  NULL)
 		return (0);
 
-	fpRead = read(fp, lineBuffer, letters);
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
 
-	if (fpRead == -1)
-		return (-1);
+	if (o == -1 || r == -1 || w == -1 || w != r)
+	{
+		free(buffer);
+		return (0);
+	}
 
-	fpWrite = write(STDOUT_FILENO, lineBuffer, fpRead);
+	free(buffer);
+	close(o);
 
-	if (fpWrite == -1)
-		return (-1);
-	fpClose = close(fp);
+	return (w);
 
-	if (fpClose == -1)
-		return (-1);
-
-	return (fpRead);
 }
